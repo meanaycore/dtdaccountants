@@ -7,10 +7,15 @@ body {
 * {
   box-sizing: border-box; }
 
+a:link {
+  text-decoration: none; }
+
+h2, h4 {
+  color: #616161; }
+
 [class*="col-"] {
   float: left;
-  padding: 15px;
-  border: 1px solid red; }
+  padding: 15px; }
 
 .row:after {
   content: "";
@@ -96,8 +101,6 @@ body {
     background: white;
     height: 400px;
     border-left: 4px solid #4a148c; }
-  h2, h4 {
-    color: #616161; }
   div.Background_module > div.left-side-nav {
     background: white;
     height: 600px; }

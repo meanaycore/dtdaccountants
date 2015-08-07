@@ -12,12 +12,22 @@ body
 	box-sizing: border-box;
 }
 
+a:link
+{
+	text-decoration: none;
+	
+}
+
+h2, h4
+{
+	color: #616161;
+}
 
 
 [class*="col-"] {
     float: left;
     padding: 15px;
-    border: 1px solid red;
+    
 }
 
 .row:after {
@@ -135,10 +145,7 @@ body
 					}
 
 
-					h2, h4
-					{
-						color: #616161;
-					}
+					
 
 
 					div.Background_module > div.left-side-nav 
