@@ -1,9 +1,12 @@
 {
   "devDependencies": {
     "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-browserify": "^0.5.1",
     "gulp-compressor": "^0.1.0",
     "gulp-livereload": "^3.8.0",
     "gulp-sass": "^2.0.4",
-    "gulp-uglify": "^1.2.0"
+    "gulp-uglify": "^1.2.0",
+    "page": "^1.6.3"
   }
 }

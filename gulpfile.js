@@ -2,7 +2,11 @@ var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 	sass = require('gulp-sass'),
 	compressor = require('gulp-compressor'),
-	livereload = require('gulp-livereload');
+	livereload = require('gulp-livereload'),
+	browserify = require('gulp-browserify'),
+	page = require('page'),
+	autoprefixer = require('gulp-autoprefixer');
+
 
 // Error Logger
 // Logs Bugs
@@ -20,6 +24,8 @@ gulp.task('scripts', function(){
 	.pipe(livereload());
 });
 
+
+
 // Html Task
 // Minifies Html
 
@@ -35,11 +41,23 @@ gulp.task('html', function(){
 	.pipe(livereload());
 });
 
+// Browserify
+// is here
+
+gulp.task('brow', function() {
+
+	return gulp.src('development/src/js/*.js')
+		.pipe(browserify({ debug: true }))
+		.pipe(gulp.dest('production/src/js'));
+
+});
+
 gulp.task('styles', function(){
 	gulp.src('development/src/sass/*.scss')
 	.pipe(sass({
 		style: 'compressed'
 	}))
+	 .pipe(autoprefixer('last 2 versions'))
 	.pipe(gulp.dest('production/src/css'))
 	.pipe(livereload());
 });
@@ -51,6 +69,7 @@ gulp.task('watch', function(){
 	gulp.watch('development/src/js/*.js', ['scripts']);
 	gulp.watch('development/src/sass/*.scss', ['styles']);
 	gulp.watch('development/src/*.html', ['html']);
+
 });
 
 gulp.task('default', ['scripts', 'styles','html', 'watch']);
